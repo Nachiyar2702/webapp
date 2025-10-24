@@ -9,6 +9,13 @@ pipeline {
     }
 
     stages {
+        stage('Clean Workspace') {
+            steps {
+               deleteDir() // Deletes all files in the workspace
+            }
+        }
+
+
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Nachiyar2702/webapp.git'
